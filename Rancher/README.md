@@ -1,12 +1,12 @@
-#### Creates a 3 node RKE Kubernetes cluster (with 3 ETC services) on bare metal, then adds Rancher from Helm3 chart. ####
+### Creates a 3 node RKE Kubernetes cluster (with 3 ETC services) on bare metal, then adds Rancher from Helm3 chart. ###
 
-RKE graph:
+#### RKE graph: ####
 ![RKE_graph](images/rke_graph.png)
 
-Kubernetes-Helm-Rancher graph:
+#### Kubernetes-Helm-Rancher graph: ####
 ![Kubernetes-Helm-Rancher_graph](images/kube-helm-rancher_graph.png)
 
-Still to do:
+** Still to do: **
 - _Create additional Rancher/Kubernetes clusters._
 - _Build, configure, populate external Docker registry._
 - _Add CI/CD containers._
