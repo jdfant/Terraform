@@ -6,7 +6,7 @@
 #### Kubernetes-Helm-Rancher graph: ####
 ![Kubernetes-Helm-Rancher_graph](images/kube-helm-rancher_graph.png)
 
-** Still to do: **
+**Still to do:**
 - _Create additional Rancher/Kubernetes clusters._
 - _Build, configure, populate external Docker registry._
 - _Add CI/CD containers._
