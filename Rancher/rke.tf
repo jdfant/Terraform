@@ -77,9 +77,6 @@ resource "local_file" "kube_cluster_yaml" {
   content  = rke_cluster.cluster.kube_config_yaml
 
   provisioner "local-exec" {
-    command = <<EOT
-      cp kube_config_cluster.yml ~/.kube/config
-      sleep 10
-    EOT
+    command = "cp kube_config_cluster.yml ~/.kube/config"
   }
 }

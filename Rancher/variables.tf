@@ -2,6 +2,14 @@ variable "helm_hostname" {
   default = "rancher.home.lan"
 }
 
+variable "helm_repository" {
+  default = "https://releases.rancher.com/server-charts/latest"
+}
+
+variable "helm_rancher_version" {
+  default = "rancher-latest"
+}
+
 variable "private_ssh_key" {
   default = "./keys/rancho"
 }

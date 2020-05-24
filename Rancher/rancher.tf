@@ -1,4 +1,11 @@
-provider "kubernetes" {}
+provider "kubernetes" {
+  host     = rke_cluster.cluster.api_server_url
+  username = rke_cluster.cluster.kube_admin_user
+
+  client_certificate     = rke_cluster.cluster.client_cert
+  client_key             = rke_cluster.cluster.client_key
+  cluster_ca_certificate = rke_cluster.cluster.ca_crt
+}
 
 resource "kubernetes_namespace" "cattle-system" {
   depends_on = [local_file.kube_cluster_yaml]
@@ -52,14 +59,14 @@ provider "helm" {
 
 resource "helm_release" "rancher" {
   depends_on = [kubernetes_secret.tls-ca]
-  name       = "rancher-latest"
-  repository = "https://releases.rancher.com/server-charts/latest"
+  name       = var.helm_rancher_version
+  repository = var.helm_repository
   chart      = "rancher"
   namespace  = "cattle-system"
 
   set {
     name  = "hostname"
-    value = "var.helm_hostname"
+    value = var.helm_hostname
   }
 
   set {
@@ -71,4 +78,4 @@ resource "helm_release" "rancher" {
     name  = "tls"
     value = "external"
   }
-  }
+}
