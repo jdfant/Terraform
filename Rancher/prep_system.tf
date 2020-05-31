@@ -17,8 +17,3 @@ resource "null_resource" "remote-exec" {
     ]
   }
 }
-# 2 Do
-#provider "docker" {
-#  host = "ssh://rancher@rancho:22"
-#}
-
