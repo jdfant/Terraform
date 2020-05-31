@@ -1,0 +1,9 @@
+debug: true
+
+hostname: rancher.home.lan
+
+ingress:
+  tls:
+    source: secret
+
+tls: external

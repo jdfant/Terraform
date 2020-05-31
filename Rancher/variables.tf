@@ -1,3 +1,19 @@
+/*
+ * RKE
+ */
+
+variable "rke_log" {
+  default = "./rke.log"
+}
+
+variable "node_ip" {
+  default = ["192.168.100.60", "192.168.100.61", "192.168.100.62"]
+}
+
+/*
+ * Helm
+ */
+
 variable "helm_hostname" {
   default = "rancher.home.lan"
 }
@@ -10,20 +26,24 @@ variable "helm_rancher_version" {
   default = "rancher-latest"
 }
 
+/*
+ * Certs/Keys
+ */
+
 variable "private_ssh_key" {
   default = "./keys/rancho"
 }
 
 variable "cluster_tls_cert" {
-  default = "./new_certs/cert.pem"
+  default = "./kube_certs/cert.pem"
 }
 
 variable "cluster_tls_key" {
-  default = "./new_certs/key.pem"
+  default = "./kube_certs/key.pem"
 }
 
 variable "cluster_ca_cert" {
-  default = "./new_certs/cacert.pem"
+  default = "./kube_certs/cacerts.pem"
 }
 
 variable "tls_cert" {
@@ -35,18 +55,14 @@ variable "tls_key" {
 }
 
 variable "ca_cert" {
-  default = "./certs/cacert.pem"
+  default = "./certs/cacerts.pem"
 }
 
-variable "rke_log" {
-  default = "./rke.log"
-}
+/*
+ * System
+ */
 
 variable "users" {
   type    = list
   default = ["root", "rancher", "jd"]
-}
-
-variable "node_ip" {
-    default = ["192.168.100.60","192.168.100.61","192.168.100.62"]
 }
