@@ -54,6 +54,10 @@ resource "rke_cluster" "jd" {
       delete_local_data  = true
     }
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "local_file" "kube_cluster_yaml" {
@@ -68,4 +72,8 @@ resource "local_file" "kube_cluster_yaml" {
     EOT
     on_failure = continue
   }
+
+   lifecycle {
+     ignore_changes = [content]
+   }
 }
