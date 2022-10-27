@@ -22,17 +22,16 @@ provider "registry.terraform.io/hashicorp/local" {
 }
 
 provider "registry.terraform.io/rancher/rke" {
-  version     = "1.3.1"
-  constraints = "~> 1.0"
+  version     = "1.3.3"
+  constraints = "1.3.3"
   hashes = [
-    "h1:DpzEH9zLCMIsi0WVS0EiPAW+FDAsE3fdY5G82NoJMn0=",
-    "h1:t33Em/LUiDBka6aVAuq/KyWlPX+na9rOQp9X5RPKRiw=",
-    "zh:173866412d42f5b731cfd2394eccd285d45ce12f9badb200d54bae40b7f544ba",
-    "zh:678d0505ab60904d17f7167e1926b7cef13846282343ec0a302d2ff460c0cf2d",
-    "zh:6802203fdcad8f562b7927cc7b7e035240d820d542fff16771323db3fb451782",
-    "zh:792510a9515d08a67f69a2602ec3f3079c9500f8f1ac43ee1e38e528abcb7850",
-    "zh:97b9a10044026a489d090d8bd090042994fa77996b89026f4ec307b59f187f80",
-    "zh:b2cc7a62025125d0aea42be8909f93c0ff035506947b4f90e46e42c2581f81bf",
-    "zh:cf39fcc94ba1c25021eff01b38286e6d103e32be1431b410fb65ad8bdd83962b",
+    "h1:siUpFN2Zg/AAY4LoBsd20dxGf5C8kqttvTi0B1ncVks=",
+    "zh:28a95e6830d379f4b2b42503012f18883acb7af2ef04e3ea910753fc6274a738",
+    "zh:2c0bd98ff07e8a4be0cee3ebd69e278ac3f949e31daf6548ef565d9cd93bca77",
+    "zh:367423a7332523efed50dd643af7944ee3b9b9573effe008afae4c6ead9310f5",
+    "zh:3c0ab4e1f0be3c6a7171d4cf25140cb1862167bd34496306f9737c458697c594",
+    "zh:ac9a8807eae7033e3cf85e18ff8a78477657d6df883644587b1cbceec0df9418",
+    "zh:c23cc66069070e56095e6345ac660a546fd59f7c3ad1c160528bebb0c48dc08b",
+    "zh:ee9fc03f83b8f05b04b2ff2f023b8285f104dfdb77577142d5c738d01f88430d",
   ]
 }
