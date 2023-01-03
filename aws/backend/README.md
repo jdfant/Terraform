@@ -1,0 +1,31 @@
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.0 |
+
+## Providers
+
+No providers.
+
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_dynamo_locking_table"></a> [dynamo\_locking\_table](#module\_dynamo\_locking\_table) | ../modules/backend/dynamo-locking | n/a |
+| <a name="module_s3_remote_backend_bucket"></a> [s3\_remote\_backend\_bucket](#module\_s3\_remote\_backend\_bucket) | ../modules/backend/s3-remote-backend | n/a |
+
+## Resources
+
+No resources.
+
+## Inputs
+
+No inputs.
+
+## Outputs
+
+No outputs.
+<!-- END_TF_DOCS -->
