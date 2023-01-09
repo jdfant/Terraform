@@ -48,18 +48,6 @@ variable "department" {
   }
 }
 
-variable "identifier" {
-  description = "The name of the RDS instance, if omitted, Terraform will assign a random, unique identifier"
-  type        = string
-  default     = ""
-}
-
-variable "create_security_group" {
-  description = "Whether to create security group for RDS cluster"
-  type        = bool
-  default     = true
-}
-
 variable "name" {
   description = "Name given resources"
   type        = string
@@ -74,36 +62,8 @@ variable "subnets" {
 
 variable "replica_count" {
   description = "Number of reader nodes to create.  If `replica_scale_enable` is `true`, the value of `replica_scale_min` is used instead."
+  type        = number
   default     = 1
-}
-
-variable "allowed_security_groups" {
-  description = "A list of Security Group ID's to allow access to."
-  type        = list(string)
-  default     = []
-}
-
-variable "vpc_cidr" {
-  description = "vpc cidr, will be added to sg for intra vpc communication"
-  type        = list(string)
-}
-
-variable "allowed_cidr_blocks" {
-  description = "A list of CIDR blocks which are allowed to access the database"
-  type        = list(string)
-  default     = []
-}
-
-variable "security_group_allowed_cidrs" {
-  description = "cidr address to be added to SG - for CROS - do not put office ip here"
-  type        = list(string)
-  default     = []
-}
-
-variable "office_cidr" {
-  description = "cidr address to be added to SG, ssh as well http access will be granted"
-  type        = list(string)
-  default     = ["12.34.56.78/32"]
 }
 
 variable "vpc_id" {
@@ -129,12 +89,6 @@ variable "master_username" {
   description = "Master DB username"
   type        = string
   default     = "postgres"
-}
-
-variable "password" {
-  description = "Master DB password"
-  type        = string
-  default     = ""
 }
 
 variable "final_snapshot_identifier_prefix" {
@@ -163,6 +117,7 @@ variable "family" {
 
 variable "db_parameter_group" {
   description = "This group acts as a container for engine configuration values that are applied to one or more DB instances."
+  type        = string
   default     = ""
 }
 
@@ -188,12 +143,6 @@ variable "apply_immediately" {
   description = "Determines whether or not any DB modifications are applied immediately, or during the maintenance window"
   type        = bool
   default     = true
-}
-
-variable "monitoring_role_arn" {
-  description = "IAM role for RDS to send enhanced monitoring metrics to CloudWatch"
-  type        = string
-  default     = ""
 }
 
 variable "create_monitoring_role" {
@@ -260,12 +209,6 @@ variable "engine_version" {
   description = "Aurora database engine version."
   type        = string
   default     = "13.6"
-}
-
-variable "instance_type_replica" {
-  description = "Instance type to use at replica instance"
-  type        = string
-  default     = "db.serverless"
 }
 
 variable "instance_type" {
@@ -354,11 +297,13 @@ variable "engine_mode" {
 
 variable "replication_source_identifier" {
   description = "ARN of a source DB cluster or DB instance if this DB cluster is to be created as a Read Replica."
+  type        = string
   default     = ""
 }
 
 variable "source_region" {
   description = "The source region for an encrypted replica DB cluster."
+  type        = string
   default     = ""
 }
 
@@ -370,6 +315,7 @@ variable "vpc_security_group_ids" {
 
 variable "db_port" {
   description = "port for db traffic"
+  type        = number
   default     = 5432
 }
 
@@ -381,6 +327,7 @@ variable "db_subnet_group_name" {
 
 variable "predefined_metric_type" {
   description = "The metric type to scale on. Valid values are RDSReaderAverageCPUUtilization and RDSReaderAverageDatabaseConnections."
+  type        = string
   default     = "RDSReaderAverageCPUUtilization"
 }
 
@@ -404,13 +351,8 @@ variable "iam_roles" {
 
 variable "aws_iam_user" {
   description = "The IAM user for RDS"
-  default     = ""
-}
-
-variable "security_group_description" {
-  description = "The description of the security group. If value is set to empty string it will contain cluster name in the description."
   type        = string
-  default     = "Managed by Terraform"
+  default     = ""
 }
 
 variable "permissions_boundary" {
@@ -425,14 +367,9 @@ variable "ca_cert_identifier" {
   default     = "rds-ca-2019"
 }
 
-variable "instances_parameters" {
-  description = "Customized instance settings. Supported keys: instance_name, instance_type, publicly_accessible"
-  type        = list(map(string))
-  default     = []
-}
-
 variable "rds_cluster_parameter_group" {
   description = "This group acts as a container for engine configuration values that are applied to one or more DB instances."
+  type        = string
   default     = ""
 }
 
