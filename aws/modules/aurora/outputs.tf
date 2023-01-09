@@ -56,12 +56,12 @@ output "jd_aurora_rds_cluster_hosted_zone_id" {
 
 output "jd_aurora_rds_cluster_instance_endpoints" {
   description = "A list of all cluster instance endpoints"
-  value       = aws_rds_cluster_instance.jd_aurora.*.endpoint
+  value       = aws_rds_cluster_instance.jd_aurora[*].endpoint
 }
 
 output "jd_aurora_rds_cluster_instance_ids" {
   description = "A list of all cluster instance ids"
-  value       = aws_rds_cluster_instance.jd_aurora.*.id
+  value       = aws_rds_cluster_instance.jd_aurora[*].id
 }
 
 output "jd_aurora_db_parameter_group_name" {

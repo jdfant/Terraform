@@ -1,5 +1,6 @@
 variable "app" {
   description = "prefix to be used on all the resources as a tag"
+  type        = string
 }
 
 variable "env" {
@@ -34,11 +35,6 @@ variable "department" {
   }
 }
 
-variable "cidr" {
-  description = "The CIDR block for the VPC. Default value is a valid CIDR, but not acceptable by AWS and should be overriden"
-  default     = "10.10.0.0/16"
-}
-
 variable "vpc_cidr" {
   description = "vpc cidr, will be added to sg for intra vpc communication"
   type        = list(string)
@@ -54,32 +50,6 @@ variable "security_group_allowed_cidrs" {
   type        = list(string)
 }
 
-variable "public_subnets" {
-  description = "A list of public subnets inside the VPC"
-  type        = list(string)
-}
-
-variable "private_subnets" {
-  description = "A list of public subnets inside the VPC"
-  type        = list(string)
-}
-
-variable "azs" {
-  description = "A list of availability zones in the region"
-  type        = list(string)
-  default     = ["us-west-2a", "us-west-2b", "us-west-2c"]
-}
-
-variable "enable_nat_gateway" {
-  description = "enable_nat_gateway true or false"
-  default     = false
-}
-
-variable "enable_vpc_endpoints" {
-  description = "Set to true to enable vpc endpoints."
-  default     = false
-}
-
 variable "vpc_id" {
   description = "The VPC ID to use"
   type        = string
@@ -87,13 +57,8 @@ variable "vpc_id" {
 
 variable "db_port" {
   description = "port for db traffic"
+  type        = number
   default     = 5432
-}
-
-variable "tags" {
-  description = "A mapping of tags to assign to the resource"
-  type        = map(string)
-  default     = {}
 }
 
 variable "security_group_description" {
