@@ -1,0 +1,38 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.0",
+      "eventSource": "aws:s3",
+      "awsRegion": "us-west-2",
+      "eventTime": "2022-08-11T12:38:42.2917",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "AWS:XXXXXXXXXXXXXX"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "12.34.56.78"
+      },
+      "responseElements": {
+        "x-amz-request-id": "XXXXXXXXXXXXXX",
+        "x-amz-id-2": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "xxxxxx-xxxxxxx-xxxxxx-xxxx0",
+        "bucket": {
+          "name": "lambda_bucket",
+          "ownerIdentity": {
+            "principalId": "XXXXXXXXXXXXX"
+          },
+          "arn": "arn:aws:s3:::lambda_bucket"
+        },
+        "object": {
+          "key": "xxxxxxxxx-lambda_results.zip",
+          "size": 15792,
+          "eTag": "XXXXXXXXXXXXXX",
+          "versionId": "XXXXXXXXXXXXX"
+        }
+      }
+    }
+  ]
+}
