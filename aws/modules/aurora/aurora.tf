@@ -67,7 +67,7 @@ resource "aws_rds_cluster_instance" "jd_aurora" {
 resource "aws_db_parameter_group" "aurora_db_postgres13_parameter_group" {
   name        = var.db_parameter_group
   family      = var.family
-  description = "aurora-db-postgres1r-parameter-group"
+  description = "aurora-db-postgres13-parameter-group"
 
   dynamic "parameter" {
     for_each = var.parameter
