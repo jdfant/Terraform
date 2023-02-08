@@ -1,13 +1,13 @@
 terraform {
-  required_version = ">= 1.3"
+  required_version = "~> 1.3"
   required_providers {
     local = {
-      source = "hashicorp/local"
-      version = "~> 2.2.1"
+      source  = "hashicorp/local"
+      version = "2.3.0"
     }
     rke = {
       source  = "rancher/rke"
-      version = "1.3.3"
+      version = "1.3.4"
     }
   }
 
@@ -22,5 +22,6 @@ terraform {
 provider "local" {}
 
 provider "rke" {
+  debug    = true
   log_file = "rke_debug.log"
 }

@@ -35,6 +35,16 @@ resource "rke_cluster" "jd" {
       snapshot  = true
       creation  = "6h"
       retention = "24h"
+
+      extra_args = {
+        listen-metrics-urls = "http://0.0.0.0:2381"
+      }
+    }
+
+    kubelet {
+      cluster_domain               = "cluster.jd"
+      fail_swap_on                 = false
+      generate_serving_certificate = false
     }
   }
 
@@ -73,7 +83,25 @@ resource "local_file" "kube_cluster_yaml" {
     on_failure = continue
   }
 
-   lifecycle {
-     ignore_changes = [content]
-   }
+  lifecycle {
+    ignore_changes = [content]
+  }
 }
+
+###############################################################################
+# If you need ca_crt/client_cert/client_key, please uncomment follows.
+###############################################################################
+#resource "local_file" "ca_crt" {
+#  filename = "${path.root}/ca_cert"
+#  content  = rke_cluster.cluster.ca_crt
+#}
+#
+#resource "local_file" "client_cert" {
+#  filename = "${path.root}/client_cert"
+#  content  = rke_cluster.cluster.client_cert
+#}
+#
+#resource "local_file" "client_key" {
+#  filename = "${path.root}/client_key"
+#  content  = rke_cluster.cluster.client_key
+#}
