@@ -1,7 +1,13 @@
 variable "kubernetes_version" {
   description = "RKE Kubernetes version"
   type        = string
-  default     = "v1.24.2-rancher1-1"
+  default     = "v1.23.10-rancher1-1"
+}
+
+variable "cluster_domain" {
+  description = "Cluster name"
+  type        = string
+  default     = "cluster.jd"
 }
 
 variable "ignore_docker_version" {
