@@ -1,0 +1,46 @@
+eks-admin-cluster-role-binding.yaml
+eks-admin-service-account.yaml
+config-map-aws-auth*.yaml
+kubeconfig_*
+
+# RKE
+**/kube_config_cluster.yml
+
+# Terraform lockfile
+.terraform.lock.hcl
+
+# Terraform Generated
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.backup
+**/*.tfstate.*
+*.tfvars
+*.tfvars.json
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Crash log files
+crash.log
+
+# Debug Logs
+**/*debug.log
+
+# Ignore override files as they are usually used to override resources locally and so
+# are not checked in
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# MacOS
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+
+# Editor Generated
+.*.swp
+.idea
+**/.vscode
