@@ -1,5 +1,5 @@
-# EKS Cluster Template
-
+# EKS Complete Cluster Example
+This leverages the AWS EKS, VPC, IAM, KMS, Cloudwatch, SSM, and Kubernetes Terraform modules to build a complete AWS EKS (Kubernetes) cluster.
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
