@@ -47,9 +47,9 @@ data "aws_iam_policy_document" "lambda_invoke" {
 
   statement {
     actions = [
-      "ssm:Describe*",
-      "ssm:Get*",
-      "ssm:List*",
+      "ssm:DescribeParameters",
+      "ssm:GetParameter",
+      "ssm:GetParameters",
       "lambda:InvokeFunction"
     ]
 
