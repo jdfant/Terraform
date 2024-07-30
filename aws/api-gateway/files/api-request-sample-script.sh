@@ -6,7 +6,7 @@ secondary_account="222222222222"
 key_usage="ENCRYPT_DECRYPT"
 key_alias="alias/TestKey"
 key_description="Test KMS Key"
-api_gateway_url="https://xxxxxxxxxxxx.execute-api.us-east-1.amazonaws.com/kms_key_generator"
+api_gateway_url="https://xxxxxxxxxxxx.execute-api.us-west-2.amazonaws.com/kms_key_generator"
 api_key_path="/APIGateway/APIKeys/kms-test"
 api_key="$(aws ssm get-parameters --names ${api_key_path} --with-decryption --region ${region}| jq -r '.Parameters[].Value')"
 
