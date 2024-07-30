@@ -12,3 +12,4 @@ module "dynamo_locking_table" {
   name = local.name
   tags = local.tags
 }
+

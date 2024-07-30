@@ -45,12 +45,10 @@ Integration Request:
   b) SecureString = xxxxxxxxxxxxxxxxxxxxxxxxxxxxx  
 
 ## 2Fix:
-API key not being added to usage plan  
-no API Gateway 'mapping templates'  
 more verbose outputs  
-set cloudwatch log group retention to never expire  
 make parameter store api key content dynamic (no locals)  
-no 'client certificate' in API Gateway 'Stage'  
+integrate Route 53 certificate generation and validation  
+convert to opentofu  
 ```
 .
 ├── README.md

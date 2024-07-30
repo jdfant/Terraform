@@ -81,7 +81,8 @@ resource "aws_api_gateway_deployment" "default" {
 }
 
 resource "aws_api_gateway_stage" "kms_key_generator" {
-  deployment_id = aws_api_gateway_deployment.default.id
-  rest_api_id   = aws_api_gateway_rest_api.kms_key_generator.id
-  stage_name    = var.api_gateway_stage_name
+  deployment_id        = aws_api_gateway_deployment.default.id
+  rest_api_id          = aws_api_gateway_rest_api.kms_key_generator.id
+  stage_name           = var.api_gateway_stage_name
+  xray_tracing_enabled = true
 }

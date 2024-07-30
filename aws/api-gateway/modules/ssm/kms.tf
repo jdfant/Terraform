@@ -5,9 +5,9 @@ data "aws_iam_policy_document" "ssm_kms_key" {
 
   statement {
     actions = [
-      "ssm:Describe*",
-      "ssm:Get*",
-      "ssm:List*",
+      "ssm:DescribeParameters",
+      "ssm:GetParameter",
+      "ssm:GetParameters",
       "lambda:InvokeFunction"
     ]
 
@@ -25,6 +25,9 @@ resource "aws_iam_policy" "lambda_invoke" {
 
 resource "aws_kms_key" "ssm_kms_key" {
   count  = var.create_key ? 1 : 0
+
+  enable_key_rotation = true
+
   policy = <<POLICY
 {
   "Version": "2012-10-17",

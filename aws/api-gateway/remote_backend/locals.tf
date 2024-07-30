@@ -8,3 +8,4 @@ locals {
     Terraformed = formatdate("MM-DD-YYYY", timestamp())
   }
 }
+

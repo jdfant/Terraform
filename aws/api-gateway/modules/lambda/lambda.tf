@@ -16,6 +16,10 @@ resource "aws_lambda_function" "kms_key_generator" {
   handler       = var.lambda_function_handler
   runtime       = var.lambda_runtime
   timeout       = var.lambda_timeout
+
+  tracing_config {
+    mode = "Active"
+  }
 }
 
 resource "aws_lambda_permission" "kms_key_generator_lambda" {

@@ -38,3 +38,4 @@ output "ssm_kms_key_arn" {
   description = "SSM KMS Key ARN"
   value       = module.ssm.kms_key_arn
 }
+
